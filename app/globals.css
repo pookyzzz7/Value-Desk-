@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Theme tokens — "lawn at dusk"
+   Light: chalk white paper, deep court-green ink.
+   Dark:  night-session green-black, chalk ink.
+   One accent: tennis-ball chartreuse, used sparingly.
+   ------------------------------------------------------------------ */
+:root {
+  --canvas: 250 249 245;   /* chalk white   */
+  --surface: 255 255 255;  /* card white    */
+  --ink: 16 36 27;         /* court green-black */
+  --muted: 84 102 93;      /* faded green-grey  */
+  --line: 16 36 27;        /* hairlines use /10-/15 alpha */
+  --accent: 158 196 34;    /* ball chartreuse (darkened for contrast on light) */
+  --court: 18 59 43;       /* deep lawn green (dark panels) */
+  --chalk: 244 243 236;    /* text on dark panels */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: 10 22 16;
+    --surface: 17 33 25;
+    --ink: 237 235 226;
+    --muted: 154 168 158;
+    --line: 237 235 226;
+    --accent: 198 232 75; /* brighter ball yellow on dark */
+    --court: 14 42 31;
+    --chalk: 244 243 236;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: rgb(var(--canvas));
+  color: rgb(var(--ink));
+  font-feature-settings: "ss01" on;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.35);
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: rgb(var(--ink));
+  color: rgb(var(--canvas));
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Chalk baseline divider — the court-line motif used between sections */
+.chalk-rule {
+  height: 1px;
+  background: rgb(var(--line) / 0.14);
+  position: relative;
+}
+.chalk-rule::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  transform: translateX(-50%);
+  background: rgb(var(--accent));
+}
