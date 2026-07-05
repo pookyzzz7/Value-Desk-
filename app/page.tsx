@@ -16,7 +16,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
-const TELEGRAM_URL = "https://t.me/valuedesk"; // ← ton canal Telegram
+const TELEGRAM_URL = "https://https://t.me/+HnnJ8bhLs90wZTdk"; // ← ton canal Telegram
 const CHECKOUT_URL = "#tarifs"; // ← lien de paiement (Stripe, etc.)
 
 /* ----------------------------------------------------------------
