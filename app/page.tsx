@@ -17,7 +17,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 const TELEGRAM_URL = "https://t.me/+HnnJ8bhLs90wZTdk"; // ← ton canal Telegram
-const CHECKOUT_URL = "#https://sublaunch.com/smartbet"; // ← lien de paiement (Stripe, etc.)
+const CHECKOUT_URL = "https://sublaunch.com/smartbet"; // ← lien de paiement (Stripe, etc.)
 
 /* ----------------------------------------------------------------
    Animation d'apparition au scroll — désactivée si reduced motion
